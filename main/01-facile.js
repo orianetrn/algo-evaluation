@@ -5,15 +5,15 @@
  * - "NUL" s'il est nul
  */
 function signe(nombre) {
-    if (nombres > 0) {
+    if (nombre > 0) {
         return "POSITIVE"
     }
-    else if (nombres < 0) {
+    else if (nombre < 0) {
         return "NEGATIVE"
     }
     else return "NUL"
 }
-let result = signe(5)
+let result = signe(-9)
 console.log(result)
 
 /**
@@ -21,5 +21,15 @@ console.log(result)
  * Astuce : un nombre pair est un nombre dont le reste de la division par 2 est 0.
  */
 function nombresPairs(nombres) {
-
+    let res=[];
+    for (i = 0, i<nombres.length, i++) {
+        if (nombres [i] %2 === 0) {
+            res.push(nombres[i])
+        }
+        return res;  
+    }
+    
 }
+let tableau = [1, 2, 3, 4, 5, 6]
+let resultat = nombresPairs(tableau)
+console.log(resultat)
