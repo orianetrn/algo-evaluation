@@ -22,10 +22,12 @@ console.log(result)
  */
 function nombresPairs(nombres) {
     
-    for (i = 0, i<nombres.length, i++) {
-        if (nombres [i] %2 > 0, nombres.splice(i,1)) ;
-        return nombres
+    for (let i = 0; i<nombres.length; i++) {
+        if ((nombres [i] %2) > 0 ) {
+            nombres.splice(i,1);
+        }
         }  
+        return nombres
 }
 let tableau = [1, 2, 3, 4, 5, 6]
 let resultat = nombresPairs(tableau)
