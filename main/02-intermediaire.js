@@ -35,10 +35,14 @@ console.log(result)
  * Par exemple : rotate([1, 2, 3, 4, 5], 2) renverra [4, 5, 1, 2, 3] 
  */
 function rotate(tableau, offset) {
-  // for (let i = 0; i<tableau.length; i++)
+  for (let i = 0; i<offset.length; i++)
+  tableau.unshift(i);
     
 }
-console.log(result)
+let tableau = [4, 5, 6, 1, 2, 3]
+let offset = 3
+let resultat = rotate(tableau, offset)
+console.log(resultat)
 
 /**
  * Suite de Syracuse
