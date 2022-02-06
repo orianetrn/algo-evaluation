@@ -10,12 +10,12 @@ function combine(tableau1, tableau2) {
     
     // Alternace avec valdeur de tableau 2 s’il y a assez d’element
     if ( i < tableau2.length ) tableau3.push(tableau2[i]) ;
-    }
+    } 
     
     /* Si tableau 2 est plus grand que tableau 1 */
     if ( tableau2.length > tableau1.length )
     {
-    for ( ; i<tableau2.length ; i++) {
+    for ( i = 0 ; i<tableau2.length ; i++) {
     tableau3.push(tableau2[i]) ;
     }
     }
@@ -34,15 +34,21 @@ console.log(result)
  * 
  * Par exemple : rotate([1, 2, 3, 4, 5], 2) renverra [4, 5, 1, 2, 3] 
  */
-function rotate(tableau, offset) {
-  for (let i = 0; i<offset.length; i++)
-  tableau.unshift(i);
-    
+
+ function rotate(tableau, offset) {
+
+  for (let i=0; i<tableau.length;i++) {
+    let j = i + offset;
+     if ( j  >= tableau.length ) j = j - tableau.length ;
+     
+  }
+  return tableau;
 }
 let tableau = [4, 5, 6, 1, 2, 3]
 let offset = 3
 let resultat = rotate(tableau, offset)
 console.log(resultat)
+
 
 /**
  * Suite de Syracuse
@@ -55,6 +61,26 @@ console.log(resultat)
  * Par exemple, pour 14, la suite sera : [14, 7, 22, 11, 34, 17, 52, 26, 13, 40]
  * Pour 1, la suite sera : [1, 4, 2, 1, 4, 2, 1, 4, 2, 1]
  */
-function syracuse(nombre) {
 
+function syracuse(nombre) {
+  let tabOut;
+  tabOut[0] = nombre;
+
+  for (let i=1; i<=9; i++) {
+     if ( tabOut[i-1] % 2 == 0 ) {
+        tabOut[i] = tabOut[i-1] / 2;
+     }
+     else
+
+    {  
+       tabOut[i] = tabOut[i-1] * 3 + 1;
+    }   
+ }
+
+ return tabOut;
 }
+
+let nombre = 1;
+let resultat1 = syracuse(nombre);
+console.log(resultat1)
+
