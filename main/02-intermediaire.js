@@ -36,16 +36,18 @@ console.log(result)
  */
 
  function rotate(tableau, offset) {
+   let tabOut=[0, 0, 0, 0, 0, 0] ;
+   let j=0 ;
 
-  for (let i=0; i<tableau.length;i++) {
-    let j = i + offset;
-     if ( j  >= tableau.length ) j = j - tableau.length ;
-     
-  }
-  return tableau;
+   for (let i=0; i<tableau.length;i++) {
+      j = i + offset;
+      if ( j  >= tableau.length ) j = j - tableau.length ;
+      tabOut[j] = tableau[i];
+   }
+   return tabOut;
 }
 let tableau = [4, 5, 6, 1, 2, 3]
-let offset = 3
+let offset = 6
 let resultat = rotate(tableau, offset)
 console.log(resultat)
 
@@ -62,8 +64,8 @@ console.log(resultat)
  * Pour 1, la suite sera : [1, 4, 2, 1, 4, 2, 1, 4, 2, 1]
  */
 
-function syracuse(nombre) {
-  let tabOut;
+ function syracuse(nombre) {
+  let tabOut=[] ;
   tabOut[0] = nombre;
 
   for (let i=1; i<=9; i++) {
@@ -71,16 +73,14 @@ function syracuse(nombre) {
         tabOut[i] = tabOut[i-1] / 2;
      }
      else
-
-    {  
+     {  
        tabOut[i] = tabOut[i-1] * 3 + 1;
-    }   
- }
+     }   
+   }
 
- return tabOut;
+   return tabOut;
 }
 
-let nombre = 1;
+let nombre = 14;
 let resultat1 = syracuse(nombre);
 console.log(resultat1)
-
